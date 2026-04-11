@@ -20,6 +20,18 @@ SKILL_ROOT = Path(__file__).resolve().parent.parent
 PERSONAS_DIR = SKILL_ROOT / "assets" / "personas"
 ROUTING_CONTRACT = SKILL_ROOT / "assets" / "routing-contract.md"
 SEQUENCES_FILE = SKILL_ROOT / "assets" / "sequences.md"
+WALKTHROUGH_FILE = SKILL_ROOT / "assets" / "WALKTHROUGH.prompt.md"
+MODE_CATALOG_FILE = SKILL_ROOT / "assets" / "mode-catalog.md"
+USE_CASES_FILE = SKILL_ROOT / "assets" / "use-cases.md"
+IMAGES_DIR = SKILL_ROOT / "assets" / "images"
+EXPECTED_IMAGES = [
+    "debono3-blue-hat.png",
+    "debono3-white-hat.png",
+    "debono3-red-hat.png",
+    "debono3-yellow-hat.png",
+    "debono3-black-hat.png",
+    "debono3-green-hat.png",
+]
 
 EXPECTED_HATS = {
     "blue": {
@@ -77,7 +89,18 @@ def validate_support_files() -> dict:
     return {
         "routing_contract_exists": ROUTING_CONTRACT.exists(),
         "sequences_file_exists": SEQUENCES_FILE.exists(),
+        "walkthrough_file_exists": WALKTHROUGH_FILE.exists(),
+        "mode_catalog_exists": MODE_CATALOG_FILE.exists(),
+        "use_cases_exists": USE_CASES_FILE.exists(),
     }
+
+
+def validate_images() -> list[dict]:
+    results = []
+    for name in EXPECTED_IMAGES:
+        path = IMAGES_DIR / name
+        results.append({"name": name, "exists": path.exists()})
+    return results
 
 
 def main():
@@ -113,8 +136,18 @@ def main():
         print(f"  {nice_label}: {status}")
     print()
 
-    # --- Check 3: Manual persona verification ---
-    print("── Check 3: Zo Personas (Manual Verification Required) ──")
+    # --- Check 3: Packaged image assets ---
+    print("── Check 3: Packaged Image Assets ──")
+    image_results = validate_images()
+    for r in image_results:
+        status = check_mark(r["exists"])
+        if not r["exists"]:
+            all_passed = False
+        print(f"  {r['name']}: {status}")
+    print()
+
+    # --- Check 4: Zo Personas (Manual Verification Required) ---
+    print("── Check 4: Zo Personas (Manual Verification Required) ──")
     print()
     print("  The validator cannot query Zo personas directly.")
     print("  Please verify the following yourself:")

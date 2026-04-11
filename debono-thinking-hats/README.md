@@ -23,13 +23,21 @@ This skill installs the Six Thinking Hats as Zo personas. Each hat is a distinct
 @Skills/debono-thinking-hats/assets/INSTALL.prompt.md
 ```
 
-**2. Verify installation:**
+**2. Run the walkthrough once:**
+
+```
+@Skills/debono-thinking-hats/assets/WALKTHROUGH.prompt.md
+```
+
+Use it again any time as a refresher.
+
+**3. Verify installation:**
 
 ```bash
 python3 Skills/debono-thinking-hats/scripts/validate_install.py
 ```
 
-**3. Start your first session:**
+**4. Start your first session:**
 
 Switch to the **Thinking Hat: Blue (Facilitator)** persona and say:
 
@@ -37,16 +45,18 @@ Switch to the **Thinking Hat: Blue (Facilitator)** persona and say:
 
 The Blue Hat will select a sequence, walk you through each hat, and synthesize the outcome.
 
+You can also activate any hat directly for a focused pass, and any active hat can deliberately invoke another hat briefly when that shift would materially improve the thinking, then return cleanly.
+
 ## Visual Identity
 
 This package includes a coordinated avatar set for the six hats under `assets/images/`:
 
-- `assets/images/debono2-blue-hat.png`
-- `assets/images/debono2-white-hat.png`
-- `assets/images/debono2-red-hat.png`
-- `assets/images/debono2-yellow-hat.png`
-- `assets/images/debono2-black-hat.png`
-- `assets/images/debono2-green-hat.png`
+- `assets/images/debono3-blue-hat.png`
+- `assets/images/debono3-white-hat.png`
+- `assets/images/debono3-red-hat.png`
+- `assets/images/debono3-yellow-hat.png`
+- `assets/images/debono3-black-hat.png`
+- `assets/images/debono3-green-hat.png`
 
 These are designed as a matched family so the personas feel like one system rather than six unrelated characters.
 
@@ -77,6 +87,20 @@ The Blue Hat selects from 8 pre-built sequences based on your goal. Each sequenc
 | 8 | Performance Review | 🔵→🔴→⚪→🟡→⚫→🟢→🔵 | Evaluating past results |
 
 Full sequence details with timing and facilitator instructions: `assets/sequences.md`
+
+## Capability Modes
+
+Beyond the canonical sequences, the package includes a portable capability layer in `assets/mode-catalog.md`.
+
+Examples:
+- analytic pass
+- Socratic interrogation through a hat lens
+- decision comparison
+- pre-mortem / post-mortem
+- rapid pulse check
+- creative provocation cycle
+
+Applied examples live in `assets/use-cases.md`.
 
 ## Usage Examples
 
@@ -137,12 +161,13 @@ The functional behavior is identical — only the label changes.
 
 The skill uses Zo's persona system:
 
-1. **Six personas** are created, one per hat. Each contains behavioral rules, anti-patterns, example outputs, and cross-references to the other five hats.
+1. **Six personas** are created, one per hat. Each contains behavioral rules, anti-patterns, example outputs, richer technique modes, and cross-references to the other five hats.
 2. **Persona switching** happens via `set_active_persona()` — the same mechanism as any Zo persona.
-3. **The Blue Hat** is the orchestrator. It knows all eight sequences and manages transitions. Other hats are self-contained thinking modes.
-4. **Two-pass installation** — Personas are created first, then updated with each other's IDs for cross-referencing.
+3. **The Blue Hat** is the canonical facilitator for structured sessions, but direct hat use is also supported.
+4. **Temporary inter-hat invocation** lets any active hat deliberately call another hat-mode for a bounded pass and then return.
+5. **Two-pass installation** — Personas are created first, then updated with each other's IDs for cross-referencing.
 
-No external dependencies. No scheduled tasks. No API keys. Just personas and prompts.
+No external dependencies. No scheduled tasks. No API keys. Just personas, prompts, and optional reference assets.
 
 ## Uninstallation
 

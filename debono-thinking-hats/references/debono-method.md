@@ -272,3 +272,13 @@ Effective hat sessions use language that is:
 - De Bono, E. (1992). *Serious Creativity: Using the Power of Lateral Thinking to Create New Ideas*. HarperBusiness.
 - De Bono Group: [https://www.debono.com](https://www.debono.com)
 - Parallel thinking overview: [https://www.debonogroup.com/services/core-programs/six-thinking-hats/](https://www.debonogroup.com/services/core-programs/six-thinking-hats/)
+
+## Applied Extensions in This Skill
+
+This implementation stays faithful to the core De Bono principle of **one hat at a time**, but extends the practical ways the hats can be used in modern AI workflows:
+
+- **Direct hat use:** a user can activate one hat for a focused pass without running a full facilitated session.
+- **Temporary deliberate hat invocation:** an active hat may briefly call another hat when the shift is named explicitly and the return path is also named explicitly.
+- **Socratic interrogation by hat lens:** the hats can be used not only to generate statements, but also to generate better questions from within each mode.
+
+These extensions preserve the central value of the method — separation of thinking modes — while making the hats more usable as a portable interactive system.

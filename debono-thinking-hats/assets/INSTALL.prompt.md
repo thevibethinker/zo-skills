@@ -141,10 +141,20 @@ Print this message:
 
 ### ✅ Six Thinking Hats installed successfully!
 
+**Recommended first run:**
+Run the guided walkthrough once before heavy use:
+
+```
+@Skills/debono-thinking-hats/assets/WALKTHROUGH.prompt.md
+```
+
+You can rerun it any time as a refresher.
+
 **Quick start:**
 1. Switch to **Thinking Hat: Blue (Facilitator)** from your persona list
 2. Say: *"I need to evaluate a new product idea"* — Blue Hat will guide you through a structured sequence
 3. Or go direct: switch to any individual hat to apply that thinking mode to your current work
+4. Use `Skills/debono-thinking-hats/assets/mode-catalog.md` for distinct methods like Socratic interrogation, rapid pulse checks, and pre-mortems
 
 **Available sequences** (Blue Hat will suggest the best fit):
 1. Initial Ideas — explore a new topic
@@ -156,7 +166,12 @@ Print this message:
 7. Problem Solving — full exploration of a complex problem
 8. Performance Review — retrospective assessment
 
-**Full sequence reference:** `Skills/debono-thinking-hats/assets/sequences.md`
+**Additional assets:**
+- Full sequence reference: `Skills/debono-thinking-hats/assets/sequences.md`
+- Walkthrough / refresher: `Skills/debono-thinking-hats/assets/WALKTHROUGH.prompt.md`
+- Capability catalog: `Skills/debono-thinking-hats/assets/mode-catalog.md`
+- Use-case library: `Skills/debono-thinking-hats/assets/use-cases.md`
+- Avatar pack: `Skills/debono-thinking-hats/assets/images/`
 
 ---
 

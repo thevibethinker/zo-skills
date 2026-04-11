@@ -1,21 +1,22 @@
 ---
 name: debono-thinking-hats
 description: >
-  Install De Bono's Six Thinking Hats as a persona-switching system for structured
+  Install De Bono's Six Thinking Hats as a portable persona-switching system for structured
   parallel thinking. Includes 6 hat personas, a routing contract, pre-built thinking
-  sequences, and a prompt-based installer. No dependencies required.
+  sequences, a walkthrough prompt, a capability catalog, a use-case library, and a
+  prompt-based installer. No dependencies required.
 compatibility: "Created for Zo Computer"
 metadata:
-  author: va.zo.computer
+  author: "zo-skills"
   framework: "De Bono Six Thinking Hats (1985)"
-  version: "1.0"
+  version: "2.0"
 ---
 
 ## What This Skill Does
 
 Installs Edward de Bono's Six Thinking Hats as six switchable Zo personas plus a routing rule. Each hat represents a distinct **thinking mode** — not a domain specialist — so you can apply structured parallel thinking to any topic: business decisions, creative projects, process improvements, or personal dilemmas.
 
-Once installed, start a session by switching to the Blue Hat (Facilitator). It guides you through a hat sequence appropriate for your goal, switching between personas as you move through the session.
+Once installed, start a session by switching to the Blue Hat (Facilitator). It guides you through a hat sequence appropriate for your goal, switching between personas as you move through the session. Any hat can also temporarily call in another hat-mode when useful, then return cleanly to the current line of thinking.
 
 ## Installation
 
@@ -30,6 +31,7 @@ The installer will:
 2. Wire cross-references so each hat can hand off to any other
 3. Print a summary with all persona IDs
 4. Optionally rename "Black Hat" → "Grey Hat" for cultural sensitivity
+5. Preserve a standalone, dependency-free install shape
 
 After installation, verify with:
 
@@ -37,16 +39,17 @@ After installation, verify with:
 python3 Skills/debono-thinking-hats/scripts/validate_install.py
 ```
 
-The package also includes six coordinated avatar images in `assets/images/` so the personas ship with a unified visual identity.
+The package also includes six coordinated avatar images in `assets/images/`, a guided walkthrough in `assets/WALKTHROUGH.prompt.md`, a capability catalog in `assets/mode-catalog.md`, and applied patterns in `assets/use-cases.md`.
 
 ## Usage
 
 1. **Start a session** — Switch to the Blue Hat persona. It will ask what you want to think about and select a hat sequence.
-2. **Follow the sequence** — The Blue Hat announces each hat transition. When it says "Put on the Yellow Hat," switch to that persona.
-3. **Think in mode** — Each hat constrains your thinking to one mode. Stay in that mode until the Blue Hat calls a transition.
-4. **Close the session** — The Blue Hat synthesizes findings, decisions, and open items.
+2. **Optional primer** — Run `@Skills/debono-thinking-hats/assets/WALKTHROUGH.prompt.md` once before first use, or anytime as a refresher.
+3. **Follow the sequence** — The Blue Hat announces each hat transition. When it says "Put on the Yellow Hat," switch to that persona.
+4. **Think in mode** — Each hat constrains your thinking to one mode. Stay in that mode until the Blue Hat calls a transition, or temporarily invoke another hat deliberately and return.
+5. **Close the session** — The Blue Hat synthesizes findings, decisions, and open items.
 
-You can also use individual hats ad-hoc without a full session (e.g., "I just want a quick Red Hat gut check on this").
+You can also use individual hats ad-hoc without a full session (e.g., "I just want a quick Red Hat gut check on this") or apply a distinct mode from `assets/mode-catalog.md`, such as Socratic interrogation through a specific hat lens.
 
 ## Available Hats
 

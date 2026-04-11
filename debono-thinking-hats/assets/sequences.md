@@ -5,7 +5,11 @@ version: 1.0
 provenance: build/debono-thinking-hats/D2.2
 ---
 
-# Six Thinking Hats — Canonical Sequences
+# Thinking Hat Sequences
+
+Use the lightest adequate structure. Not every situation needs a full multi-hat journey: sometimes a rapid pulse check or a single direct hat pass is enough.
+
+For non-sequence patterns such as Socratic interrogation, decision comparison, pre-mortems, and rapid pulse checks, see `assets/mode-catalog.md`.
 
 Eight pre-built hat sequences from De Bono's methodology. The Blue Hat (Facilitator) selects the best sequence based on the user's goal and may adapt the order mid-session if needed.
 

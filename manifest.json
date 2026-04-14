@@ -37,6 +37,10 @@
       "description": "Universal close skill. Just say \"close\" and it auto-routes to the right close skill (thread-close, drop-close, or build-close) based on SESSION_STATE context."
     },
     {
+      "slug": "debono-thinking-hats",
+      "description": "Standalone De Bono Six Thinking Hats persona-switching system for Zo Computer. Includes installer prompt, six coordinated hat personas, routing contract, canonical sequences, validation script, and aligned avatar assets."
+    },
+    {
       "slug": "drop-close",
       "description": "Close Pulse worker (Drop) threads. Writes structured deposit JSON for orchestrator review. Does NOT commit - that's the orchestrator's job. For normal threads use thread-close. For post-build synth..."
     },
@@ -77,12 +81,12 @@
       "description": "Handle escalation requests from <YOUR_INSTANCE> instances and provide thoughtful mentor guidance based on precedent and context analysis"
     },
     {
-      "slug": "debono-thinking-hats",
-      "description": "Standalone De Bono Six Thinking Hats persona-switching system for Zo Computer. Includes installer prompt, six coordinated hat personas, routing contract, canonical sequences, validation script, and aligned avatar assets."
-    },
-    {
       "slug": "persona-optimization",
       "description": "Persona agency bootloader for Zo Computer. Installs a multi-persona switching architecture with hard-switch rules (Builder, Debugger, Strategist, Writer, Architect) and methodology injection (Resea..."
+    },
+    {
+      "slug": "portfolio-generator",
+      "description": "Guided portfolio website generator that teaches agentic engineering. Walks users through data gathering, profile building, and deploying a polished personal site to zo.space \u2014 narrating every step so the process itself is the lesson."
     },
     {
       "slug": "prompt-to-skill",

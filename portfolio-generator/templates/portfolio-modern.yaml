@@ -1,0 +1,191 @@
+---
+created: 2026-03-20
+last_edited: 2026-03-20
+version: "2.0"
+provenance: portfolio-generator
+
+# Portfolio Modern Template v2
+# Editorial-grade design system for personal portfolio pages
+# Three directions, all sharing the same structural DNA
+
+name: portfolio-modern
+description: |
+  Adaptive personal portfolio. Three aesthetic modes but one shared
+  architecture: left-label / right-content grid, large typographic hero,
+  staggered fade-in motion, and a dark accent section for domains/skills.
+  Every direction avoids AI slop — no blue-600 buttons, no rounded pill
+  badges, no centered-everything layouts.
+
+# ─── STRUCTURE ──────────────────────────────────────────────────────
+# Every direction uses this identical section skeleton:
+
+structure:
+  nav:
+    layout: "flex justify-between, location left, linkedin right"
+    purpose: "Minimal orientation — where they are, how to reach them"
+
+  hero:
+    layout: "Left-aligned, max-w-4xl, no avatar circle"
+    elements:
+      - label: "uppercase tracking-widest text-xs, role + company"
+      - name: "clamp(2.8rem, 6vw + 1rem, 5.5rem), font-bold, letter-spacing -0.035em, line-height 0.95"
+      - tagline: "serif italic, max-w-xl, text-lg md:text-xl, muted color"
+    anti_patterns:
+      - "NEVER center the hero"
+      - "NEVER use a colored circle with initials"
+      - "NEVER put a photo placeholder unless user provided a real photo"
+
+  content_sections:
+    layout: "grid grid-cols-1 md:grid-cols-12 gap-16"
+    label_column: "md:col-span-4, text-xs uppercase tracking-widest"
+    content_column: "md:col-span-8"
+    sections:
+      - about
+      - experience
+      - domains_or_skills (dark background)
+      - education
+    anti_patterns:
+      - "NEVER use cards for experience entries — use dividers"
+      - "NEVER use rounded pill badges for skills — use plain text with spacing"
+      - "NEVER use identical padding on every section — vary rhythm"
+
+  cta:
+    layout: "Large text link with arrow, border-top divider"
+    text: "'Let's talk' or contextual equivalent"
+    style: "text-3xl md:text-5xl font-bold, arrow animates on hover"
+    anti_patterns:
+      - "NEVER use a centered 'Let's Connect' section with a button"
+      - "NEVER use bg-blue-600 or any default Tailwind color"
+
+  footer:
+    layout: "flex justify-between, copyright left, 'Built with Zo' right"
+    style: "text-xs, barely visible, not a destination"
+
+# ─── MOTION ─────────────────────────────────────────────────────────
+
+motion:
+  system: "FadeIn component wrapping each element"
+  entrance: "opacity 0→1, translateY 12px→0"
+  easing: "cubic-bezier(0.16, 1, 0.3, 1) — expo out"
+  duration: "0.6s"
+  stagger: "60-120ms between siblings"
+  rule: "One orchestrated page load, no scroll-triggered animations"
+
+# ─── TYPOGRAPHY ─────────────────────────────────────────────────────
+
+typography:
+  strategy: "Google Fonts with font-display: swap"
+  heading_options:
+    - "Instrument Sans (geometric, modern)"
+    - "Plus Jakarta Sans (friendly, rounded)"
+    - "Outfit (clean, contemporary)"
+    - "Onest (warm, technical)"
+  body_options:
+    - "Newsreader (editorial serif, for taglines/quotes)"
+    - "Source Serif 4 (professional serif)"
+    - "System stack for body text is acceptable"
+  banned:
+    - "Inter"
+    - "Roboto"
+    - "Open Sans"
+    - "Arial"
+    - "Lato"
+    - "Montserrat"
+  scale:
+    nav: "text-sm (14px)"
+    section_label: "text-xs (12px), uppercase, tracking-widest"
+    body: "text-base md:text-lg (16-18px)"
+    subhead: "text-xl md:text-2xl (20-24px)"
+    hero_label: "text-sm, uppercase, tracking-widest"
+    hero_name: "clamp(2.8rem, 6vw + 1rem, 5.5rem)"
+    cta: "text-3xl md:text-4xl lg:text-5xl"
+
+# ─── DESIGN DIRECTIONS ─────────────────────────────────────────────
+
+directions:
+  editorial:
+    description: "Magazine-inspired. Serif accents, warm neutrals, generous whitespace. Best for: executives, consultants, educators, writers."
+    palette:
+      page: "#FAF9F7"
+      surface: "#F3F2EF"
+      dark_section_bg: "#1a1a18"
+      dark_section_text: "#c8c7c3"
+      dark_section_label: "#706f6a"
+      text_primary: "#1a1a18"
+      text_secondary: "#52514d"
+      text_tertiary: "#3d3d3a"
+      text_muted: "#8a8780"
+      text_faint: "#b0afa9"
+      border: "#e5e4e0"
+    fonts:
+      heading: "Instrument Sans"
+      accent: "Newsreader (italic, for taglines)"
+    vibe: "The New Yorker profile page"
+
+  technical:
+    description: "Precise, structured, monochromatic with a single sharp accent. Best for: engineers, data people, PMs, designers."
+    palette:
+      page: "#FAFAFA"
+      surface: "#F0F0F0"
+      dark_section_bg: "#111111"
+      dark_section_text: "#d4d4d4"
+      dark_section_label: "#666666"
+      text_primary: "#111111"
+      text_secondary: "#444444"
+      text_tertiary: "#333333"
+      text_muted: "#888888"
+      text_faint: "#aaaaaa"
+      border: "#e0e0e0"
+      accent: "#0055FF"
+    fonts:
+      heading: "Onest"
+      accent: "Source Serif 4 (for tagline only)"
+    vibe: "Stripe's about page"
+
+  bold:
+    description: "High contrast, dark-dominant with warm accent. Best for: founders, creatives, marketers, speakers."
+    palette:
+      page: "#0F0F0E"
+      surface: "#1A1A18"
+      dark_section_bg: "#F5F4F0"
+      dark_section_text: "#1A1A18"
+      dark_section_label: "#8a8780"
+      text_primary: "#F5F4F0"
+      text_secondary: "#C8C7C2"
+      text_tertiary: "#A0A09A"
+      text_muted: "#706F6A"
+      text_faint: "#4A4A46"
+      border: "#2A2A28"
+      accent: "#FF6B35"
+    fonts:
+      heading: "Plus Jakarta Sans"
+      accent: "Newsreader (italic)"
+    vibe: "Premium dark portfolio, like a luxury brand"
+
+# ─── GLOBAL ANTI-PATTERNS ──────────────────────────────────────────
+
+never:
+  - "bg-blue-600 or any default Tailwind named color as accent"
+  - "Rounded circle with initials as avatar placeholder"
+  - "Centered everything layout"
+  - "Skill pills / rounded-full badges"
+  - "Cards wrapping experience entries"
+  - "Equal padding on every section (py-16 py-16 py-16)"
+  - "Generic 'Let's Connect' centered CTA with a button"
+  - "zinc-50, zinc-100, blue-600, blue-700 — any raw Tailwind palette"
+  - "bounce or elastic easing"
+  - "glassmorphism, gradients, glow effects"
+  - "Icon above every section heading"
+  - "More than 1 lucide icon type (ArrowUpRight is enough)"
+
+always:
+  - "Left-aligned hero, asymmetric layout"
+  - "Label-content grid (4-col label / 8-col content)"
+  - "Custom color values via style attributes, not Tailwind color classes"
+  - "One dark-background section for contrast"
+  - "Staggered fade-in animation on load"
+  - "Fluid hero text with clamp()"
+  - "Serif accent font for tagline/quotes"
+  - "Generous whitespace — let the content breathe"
+  - "Dividers between experience entries, not cards"
+  - "Arrow link for CTA, not a button"
